@@ -1,16 +1,8 @@
+import { getData } from "../service/anime";
 import Navbar from "./navbar";
 
-async function getAnime() {
-  const res = await fetch("http://localhost:8000/anime");
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-  return res.json(); // Return the parsed JSON object
-}
-
 export default async function AnimePage() {
-  const response = await getAnime();
+  const response = await getData("http://localhost:8000/anime");
   const data = response.data; // Fetch the response // Access the first object in the data array
   console.log(data);
   return (
@@ -43,6 +35,12 @@ export default async function AnimePage() {
                   Episodes: {anime.episodes}
                 </p>
                 <div className="flex space-x-2">
+                  <a
+                    href={`/anime/detail/${anime.id}`}
+                    className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  >
+                    Read More
+                  </a>
                   <a
                     href="#"
                     className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
