@@ -1,5 +1,7 @@
 "use client";
 
+import { signIn } from "next-auth/react";
+
 export default function Home() {
   return (
     <div>
@@ -23,7 +25,7 @@ export default function Home() {
           </p>
           <div className="mt-6 space-x-4">
             <button
-              onClick={() => (window.location.href = "/login")}
+              onClick={() => signIn()}
               className="px-6 py-3 bg-red-500 hover:bg-red-600 rounded-lg font-semibold transition-all"
             >
               Login

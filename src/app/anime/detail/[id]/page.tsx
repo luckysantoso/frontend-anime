@@ -6,6 +6,7 @@ export default async function DetailAnimepage(props: any) {
   const anime = await getData(`http://localhost:8000/anime/${params.id}`);
   return (
     <div>
+    {/* Kembangkan Tampilannya */}
       <p>{anime.data.title}</p>
       <p>{anime.data.episodes}</p>
       <p>{anime.data.Genre.name}</p>
