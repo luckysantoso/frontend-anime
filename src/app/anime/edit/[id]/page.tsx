@@ -1,7 +1,7 @@
 "use client";
 
 import Navbar from "@/app/anime/navbar";
-import { getData, patchData } from "@/app/service/anime";
+import { patchData } from "@/app/service/anime";
 import { useEffect, useState } from "react";
 
 export default function EditPage(props: { params: Promise<{ id: string }> }) {
@@ -30,7 +30,10 @@ export default function EditPage(props: { params: Promise<{ id: string }> }) {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (id && anime) {
-      const response = await patchData(`http://localhost:8000/anime/${id}`, anime);
+      const response = await patchData(
+        `http://localhost:8000/anime/${id}`,
+        anime
+      );
       console.log(response);
 
       if (response) {
