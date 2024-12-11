@@ -12,7 +12,7 @@ export const postData = async (url: string, data: any) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
+      // "Access-Control-Allow-Origin": "*",
     },
     body: JSON.stringify(data),
   });
@@ -28,13 +28,28 @@ export const patchData = async (url: string, data: any) => {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
+      // "Access-Control-Allow-Origin": "*",
     },
     body: JSON.stringify(data),
   });
 
   if (!res.ok) {
     throw new Error("Failed to patch data");
+  }
+  return res.json();
+};
+
+export const deleteData = async (url: string) => {
+  const res = await fetch(url, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      // "Access-Control-Allow-Origin": "*",
+    },
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed to delete data");
   }
   return res.json();
 };
