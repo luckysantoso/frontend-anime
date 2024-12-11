@@ -20,6 +20,7 @@ export default function EditPage(props: { params: Promise<{ id: string }> }) {
     const fetchAnime = async () => {
       if (id) {
         const fetchedAnime = await getAnimeById(id);
+        fetchedAnime.genreid = 1;
         setAnime(fetchedAnime);
       }
     };
@@ -29,28 +30,22 @@ export default function EditPage(props: { params: Promise<{ id: string }> }) {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (id && anime) {
-      try {
-        const response = await patchData(
-          `http://localhost:8000/anime/${id}`,
-          anime
-        );
-        if (response) {
-          alert("Anime updated successfully!");
-          // Fetch data again to show updated information
-          const updatedAnime = await getAnimeById(id);
-          setAnime(updatedAnime); // Update the state with new data
-        } else {
-          alert("Failed to update anime.");
-        }
-      } catch (error) {
-        console.error("Error updating anime:", error);
-        alert("An error occurred while updating the anime.");
+      const response = await patchData(
+        `http://localhost:8000/anime/${id}`,
+        anime
+      );
+      console.log(response);
+
+      if (response) {
+        alert("Anime updated successfully!");
+      } else {
+        alert("Failed to update anime.");
       }
     }
   };
 
   const handleChange = (
-    event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+    event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const { name, value } = event.target;
     setAnime((prevAnime: any) => ({
@@ -69,22 +64,16 @@ export default function EditPage(props: { params: Promise<{ id: string }> }) {
 
   const deleteAnime = async () => {
     if (id) {
-      try {
-        const response = await fetch(`http://localhost:8000/anime/${id}`, {
-          method: "DELETE",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
-        if (response.ok) {
-          alert("Anime deleted successfully!");
-          window.location.href = "/anime";
-        } else {
-          alert("Failed to delete anime.");
-        }
-      } catch (error) {
-        console.error("Error deleting anime:", error);
-        alert("An error occurred while deleting the anime.");
+      const response = await fetch(`http://localhost:8000/anime/${id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (response) {
+        alert("Anime deleted successfully!");
+      } else {
+        alert("Failed to delete anime.");
       }
     }
   };
@@ -174,15 +163,16 @@ export default function EditPage(props: { params: Promise<{ id: string }> }) {
           <div className="flex justify-center gap-4 mt-6">
             <button
               type="submit"
+              onClick={() => {
+                window.location.href = "/anime";
+              }}
               className="px-4 py-2 bg-indigo-600 text-white rounded-md text-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             >
               Save
             </button>
             <button
               type="button"
-              onClick={() => {
-                deleteAnime();
-              }}
+              onClick={() => deleteAnime()}
               className="px-4 py-2 bg-red-600 text-white rounded-md text-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
             >
               Delete
