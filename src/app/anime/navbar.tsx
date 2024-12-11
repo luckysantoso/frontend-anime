@@ -19,7 +19,7 @@ export default function Navbar() {
             </span>
           </a>
 
-          {/* * Tombol Tambah
+          {/* Tombol Tambah
           <a
             href="/anime/create"
             className="bg-white text-red-700 hover:bg-red-200 font-bold py-2 px-4 rounded-full shadow-md"

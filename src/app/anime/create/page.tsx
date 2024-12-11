@@ -137,6 +137,9 @@ export default function CreateAnimePage() {
               <div className="flex justify-center">
               <button
                 type="submit"
+                onClick={() => {
+                  window.location.href = "/anime";
+                }}
                 className="py-2 px-4 bg-indigo-600 text-white rounded-md text-sm font-medium hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
               >
                 Create
