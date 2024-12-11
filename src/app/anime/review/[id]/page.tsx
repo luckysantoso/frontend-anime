@@ -45,6 +45,9 @@ export default function ReviewPage() {
           <div className="text-center">
             <button
               type="submit"
+              onClick={() => {
+                window.location.href = "/anime";
+              }}
               className="px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
             >
               Submit
