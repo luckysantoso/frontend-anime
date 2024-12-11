@@ -8,11 +8,15 @@ import { useParams } from "next/navigation";
 export default function ReviewPage() {
   const params = useParams();
   const [review, setReview] = useState("");
+  const userId = 1; // Add user_id constant
+  const animeId = parseInt(params.id as string); // Add anime_id constant
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     await postData(`http://localhost:8000/reviews/${params.id}`, {
       message: review,
+      user_id: userId,
+      anime_id: animeId,
     });
   };
 
