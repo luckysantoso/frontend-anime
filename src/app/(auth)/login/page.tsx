@@ -84,12 +84,12 @@ export default function LoginPage() {
                     </p>
                   )}
                   <p className="mt-6 text-sm text-gray-600 text-center">
-                    Belum memiliki akun?{" "}
+                      Don't have an account yet?{" "}
                     <a
                       href="http://localhost:3000/register"
                       className="text-blue-500 hover:underline"
                     >
-                      Register dulu
+                      Register here
                     </a>
                   </p>
                 </div>
