@@ -8,7 +8,7 @@ export default async function AnimePage() {
 
   return (
     <div className="relative">
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="mt-5 flex flex-wrap justify-center gap-6 px-4 max-w-screen-xl mx-auto">
         {data.length > 0 &&
           data.map((anime: any) => (

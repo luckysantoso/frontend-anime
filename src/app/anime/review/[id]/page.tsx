@@ -23,9 +23,12 @@ export default function ReviewPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="flex-grow flex justify-center items-center">
-        <form onSubmit={handleSubmit} className="w-full max-w-md p-6 bg-white rounded-lg shadow-md">
+        <form
+          onSubmit={handleSubmit}
+          className="w-full max-w-md p-6 bg-white rounded-lg shadow-md"
+        >
           <div className="mb-6">
             <label
               htmlFor="review-input"

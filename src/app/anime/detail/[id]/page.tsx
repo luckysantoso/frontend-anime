@@ -11,7 +11,7 @@ export default async function DetailAnimepage(props: any) {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="max-w-lg mx-auto bg-white shadow-md rounded-md p-6 mt-6">
         <h1 className="text-2xl font-bold text-gray-800 mb-4">
           {anime.data.title}

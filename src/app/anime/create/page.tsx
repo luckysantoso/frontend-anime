@@ -30,7 +30,7 @@ export default function CreateAnimePage() {
 
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="max-w-2xl mx-auto mt-8 bg-white shadow-md rounded-lg p-6">
         <h1 className="text-2xl font-bold mb-6 text-gray-800">Create Anime</h1>
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -134,17 +134,17 @@ export default function CreateAnimePage() {
               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
             />
           </div>
-              <div className="flex justify-center">
-              <button
-                type="submit"
-                onClick={() => {
-                  window.location.href = "/anime";
-                }}
-                className="py-2 px-4 bg-indigo-600 text-white rounded-md text-sm font-medium hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              >
-                Create
-              </button>
-              </div>
+          <div className="flex justify-center">
+            <button
+              type="submit"
+              onClick={() => {
+                window.location.href = "/anime";
+              }}
+              className="py-2 px-4 bg-indigo-600 text-white rounded-md text-sm font-medium hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            >
+              Create
+            </button>
+          </div>
         </form>
       </div>
     </div>

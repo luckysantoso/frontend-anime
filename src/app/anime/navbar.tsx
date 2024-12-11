@@ -6,14 +6,10 @@ export default function Navbar() {
         <div className="flex justify-between items-center mx-auto max-w-screen-xl p-4">
           {/* Logo dan Judul */}
           <a
-            href="#"
+            href="/anime"
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
-            <img
-              src="images/dandan-background-square.jpg"
-              className="h-8"
-              alt="Flowbite Logo"
-            />
+            <img src="images/dandan-background-square.jpg" className="h-8" />
             <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
               Anime Review Management
             </span>

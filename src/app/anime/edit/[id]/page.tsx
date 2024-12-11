@@ -80,7 +80,7 @@ export default function EditPage(props: { params: Promise<{ id: string }> }) {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="max-w-lg mx-auto bg-white shadow-md rounded-md p-6 mt-6">
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
