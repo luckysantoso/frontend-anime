@@ -18,13 +18,16 @@ export default async function DetailAnimepage(props: any) {
         </h1>
         <div className="mb-4">
           <p className="text-sm text-gray-600">
-            <span className="font-semibold">Episodes:</span> {anime.data.episodes}
+            <span className="font-semibold">Episodes:</span>{" "}
+            {anime.data.episodes}
           </p>
           <p className="text-sm text-gray-600">
-            <span className="font-semibold">Genre:</span> {anime.data.Genre.name}
+            <span className="font-semibold">Genre:</span>{" "}
+            {anime.data.Genre.name}
           </p>
           <p className="text-sm text-gray-600">
-            <span className="font-semibold">Review:</span> {anime.data.review}
+            <span className="font-semibold">Sinopsi:</span>{" "}
+            {anime.data.sinopsis}
           </p>
           <p className="text-sm text-gray-600">
             <span className="font-semibold">Anime ID:</span> {anime.data.id}
