@@ -173,6 +173,11 @@ export default function EditPage(props: { params: Promise<{ id: string }> }) {
             <button
               type="button"
               onClick={() => deleteAnime()}
+                onClick={() => {
+                deleteAnime().then(() => {
+                  window.location.href = "/anime";
+                });
+                }}
               className="px-4 py-2 bg-red-600 text-white rounded-md text-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
             >
               Delete
