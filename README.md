@@ -1,3 +1,14 @@
+# FrontEnd Golang Final Project with Next.js
+
+| Name           | NRP        |
+| ---            | ---        |
+| Lucky Santoso | 5025221050 |
+| Putri Meyliya Rachmawati | 5025221062 |
+
+## Link Youtube
+https://youtu.be/JZl130uJEp0 
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
